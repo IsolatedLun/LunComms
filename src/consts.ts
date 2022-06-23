@@ -1,0 +1,1 @@
+export const ICON_MICROPHONE = `\uf130`;

@@ -1,0 +1,11 @@
+@use '../abstracts/' as *;
+
+@media screen and (max-width: #{$breakpoint-small}) {
+   :root {
+        @each $name, $size in $sizes-mobile {
+            @each $size-key, $size-val in $size {
+                --size-#{$name}-#{$size-key}: #{$size-val};
+            }
+        }
+   }
+}

@@ -1,0 +1,18 @@
+@use '../abstracts/' as *;
+
+.icon {
+    font-family: 'Font Awesome 5 Free';
+}
+
+.icon:not([data-custom-weight='true']) {
+    font-weight: bold;
+}
+
+// Misc
+*[data-sr='true'] {
+    font-size: 0px;
+}
+
+.whitespace-nowrap {
+    white-space: nowrap;
+}

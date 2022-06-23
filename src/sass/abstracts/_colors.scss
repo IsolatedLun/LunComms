@@ -1,0 +1,16 @@
+$colors-dark: (
+   background: (
+    '400': hsl(210 13% 6%),
+    '500': hsl(210 13% 12%),
+   ),
+
+   text: (
+    '400': white
+   ),
+
+   active: (
+      '400': cyan
+   )
+);
+
+$active-theme: $colors-dark;

@@ -1,4 +1,30 @@
+@use './tokens' as *;
+
 @mixin pseudo-element($content: '') {
     content: $content;
     position: absolute;
+}
+
+@mixin create-button(
+    $padding: $button-padding-default,
+    $background: $button-background-default,
+    $color: $button-color-default,
+    $border-radius: $button-border-radius-default,
+    $background-on-hov: $button-background-default,
+    $color-on-hov: $button-color-default,
+    $transition: $button-transition-default
+) 
+{
+    padding: $padding;
+    background-color: $background;
+    color: $color;
+
+    border-radius: $border-radius;
+
+    transition: $transition;
+
+    &:is(:hover, :active, [data-secondary-variant='active']) {
+        background-color: $background-on-hov;
+        color: $color-on-hov;
+    }
 }

@@ -2,3 +2,25 @@
 
 // Border radiuses
 $border-radius-cubed: 8px;
+
+// Navbar
+$navbar-background: var(--clr-background-500);
+
+// Comms
+$commsUser-background: var(--clr-background-500);
+$commsControls-background: var(--clr-background-500);
+    // User
+    $userProfile-width-resp: clamp(5em, 16vw, 10em);
+    $commsUser-padding-resp: clamp(2em, 5vw, 3em) clamp(2.5em, 5vw, 4.5em);
+
+// Button
+$button-padding-default: 0.25em 0.5em;
+$button-background-default: var(--clr-active-400);
+$button-color-default: var(--clr-text-400);
+$button-border-radius-default: $border-radius-cubed;
+$button-transition-default: background-color 95ms ease-in-out, color 95ms ease-in-out;
+
+$button-control-background: var(--clr-text-muted-hov);
+$button-control-color: var(--clr-text-muted);
+$button-control-background-on-hov: var(--clr-active-hover);
+$button-cotrol-color-on-hov: var(--clr-active-400);

@@ -1,4 +1,6 @@
+@use '../abstracts/' as *;
+
 .comms-controls {
-    background-color: var(--clr-background-500);
+    background-color: $commsControls-background;
     margin-top: auto;
 }

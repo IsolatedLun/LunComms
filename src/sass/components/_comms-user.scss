@@ -1,8 +1,12 @@
+@use '../abstracts/' as *;
+
 .comms-user {
-    background-color: var(--clr-background-500);
+    background-color: $commsUser-background;
+    padding: $commsUser-padding-resp;
 
     .user__profile {
-        width: 10em;
+        width: $userProfile-width-resp;
+
         background-color: black;
         aspect-ratio: 1;
     }

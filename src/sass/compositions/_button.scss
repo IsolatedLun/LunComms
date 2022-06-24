@@ -1,0 +1,23 @@
+@use '../abstracts/' as *;
+
+.button {
+    @include create-button();
+}
+
+.button[data-variant='control'] {
+    @include create-button(
+        $background: $button-control-background,
+        $color: $button-control-color,
+        $background-on-hov: $button-control-background-on-hov,
+        $color-on-hov: $button-cotrol-color-on-hov,
+        $border-radius: 100vw,
+        $padding: 0.45em 0.6em
+    )
+}
+
+.button[data-variant='close'] {
+    @include create-button(
+        $background: var(--clr-close-400),
+        $background-on-hov: var(--clr-close-500),
+    );
+}

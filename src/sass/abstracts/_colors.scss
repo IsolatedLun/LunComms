@@ -5,11 +5,19 @@ $colors-dark: (
    ),
 
    text: (
-    '400': white
+    '400': white,
+    'muted': hsl(0 0 68%),
+    'muted-hov': hsl(0 0 50% / 0.24),
    ),
 
    active: (
-      '400': cyan
+      '400': hsl(212 100% 57%),
+      'hover': hsl(212 100% 47% / 0.24)
+   ),
+
+   close: (
+      '400': hsl(0 86% 51%),
+      '500': hsl(0 86% 58%),
    )
 );
 

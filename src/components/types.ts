@@ -22,5 +22,5 @@ export interface Props_Element extends Props_Children, Props_CubeCSS, Props_Vari
 };
 
 export interface Props_Interactibe<E> extends Props_Element {
-    onInteract?: (e: E) => void;
+    onInteract?: (e: E, isActive: boolean) => void;
 }

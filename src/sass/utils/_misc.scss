@@ -48,6 +48,14 @@
     display: none;
 }
 
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.overflow-auto {
+    overflow: auto;
+}
+
 // Colors
 .clr-patreon-400 {
     color: var(--clr-patreon-400);

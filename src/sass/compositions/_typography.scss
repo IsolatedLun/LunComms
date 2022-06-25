@@ -16,3 +16,8 @@
 .whitespace-nowrap {
     white-space: nowrap;
 }
+
+.text-disable {
+    pointer-events: none;
+    user-select: none;
+}

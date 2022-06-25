@@ -21,10 +21,28 @@
 
     border-radius: $border-radius;
 
+    letter-spacing: 1px;
+
     transition: $transition;
 
-    &:is(:hover, :active, [data-secondary-variant='active']) {
+    &:is(:hover, :active, [data-active='true']) {
         background-color: $background-on-hov;
         color: $color-on-hov;
     }
+}
+
+@mixin create-window-button(
+    $width,
+    $background,
+    $background-on-hov
+) 
+{
+    @include create-button(
+        $background: $background,
+        $background-on-hov: $background-on-hov,
+        $padding: $buttonWindow-padding,
+    );
+
+    width: $width;
+    aspect-ratio: 1;
 }

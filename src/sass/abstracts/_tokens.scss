@@ -6,6 +6,12 @@ $border-radius-cubed: 8px;
 // Navbar
 $navbar-background: var(--clr-background-500);
 
+// Window
+$window-background-color: var(--clr-background-500);
+$window-outline-color: var(--clr-active-400);
+$window-min-width: 200px;
+$window-min-height: 100px;
+
 // Comms
 $commsUser-background: var(--clr-background-500);
 $commsControls-background: var(--clr-background-500);
@@ -24,3 +30,8 @@ $button-control-background: var(--clr-text-muted-hov);
 $button-control-color: var(--clr-text-muted);
 $button-control-background-on-hov: var(--clr-active-hover);
 $button-cotrol-color-on-hov: var(--clr-active-400);
+
+$button-background-close: var(--clr-close-400);
+$button-background-close-hover: var(--clr-close-500);
+
+$buttonWindow-padding: 0.1em;

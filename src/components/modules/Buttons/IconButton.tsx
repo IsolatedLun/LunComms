@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import { createCubeCSSClass, prepareProps } from '../../../utils/funcs'
-import { Props_Button } from './types'
+import { createCubeCSSClass, prepareProps } from '../../../utils/funcs';
+import { Props_IconButton } from './types';
 
-const Button = (props: Props_Button) => {
-    const _props = prepareProps(props, { 'compostClass': 'button', utilClass: 'fs-600' });
+const IconButton = (props: Props_IconButton) => {
+    const _props = prepareProps(props, { 'compostClass': 'icon button', utilClass: 'fs-600' });
 
     const [isActive, setActive] = useState(false)
 
@@ -26,4 +26,4 @@ const Button = (props: Props_Button) => {
     )
 }
 
-export default Button
+export default IconButton

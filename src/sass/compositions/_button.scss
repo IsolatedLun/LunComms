@@ -1,6 +1,6 @@
 @use '../abstracts/' as *;
 
-.button {
+.button:not([data-variant='window'], [data-variant='null']) {
     @include create-button();
 }
 
@@ -17,7 +17,25 @@
 
 .button[data-variant='close'] {
     @include create-button(
-        $background: var(--clr-close-400),
-        $background-on-hov: var(--clr-close-500),
+        $background: $button-background-close,
+        $background-on-hov: $button-background-close-hover,
     );
+}
+
+.button[data-variant='window'] {
+    @include create-window-button(
+        $width: 10px, 
+        $background: $button-background-close,
+        $background-on-hov: $button-background-close-hover,
+    );
+}
+
+.button[data-secondary-variant='resizer'] {
+    @include create-window-button(
+        $width: 16px, 
+        $background: $button-background-default,
+        $background-on-hov: $button-background-default,
+    );
+
+    border-top-left-radius: 100vw;;
 }

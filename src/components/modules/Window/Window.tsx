@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { createCubeCSSClass, getMoveWindowData, IsElementOutOfBounds, prepareProps } from '../../../utils/funcs'
+import { createCubeCSSClass, getMoveWindowData, prepareProps, toggleElement } from '../../../utils/funcs'
 import { Props_MouseMoveOffset } from '../../../utils/types'
 import Button from '../Buttons/Button'
 import { Props_Window } from './types'
@@ -30,7 +30,9 @@ const Window = (props: Props_Window) => {
 
         if(isMouseDown) {
             windowEl.style.left = (e.clientX + mouseDownData.offsetX) + 20 + 'px'
-            windowEl.style.top = (e.clientY + mouseDownData.offsetY) - 20 + 'px'
+            windowEl.style.top = (e.clientY + mouseDownData.offsetY) - 30 + 'px'
+
+            windowEl.style.cursor = 'pointer';
         }
     }
 
@@ -50,13 +52,13 @@ const Window = (props: Props_Window) => {
                 }}
                 onMouseUp={() => setIsMouseDown(false)}
                 onMouseMove={(e) => moveWindow(e, _props.id)}
-                className='[ window__header ] [ flex justify-content-space-between padding-inline-1 ]'>
+                className='[ window__header ] [ flex justify-content-space-between padding-1 ]'>
                 <div>
                     <p className='[ text-disable ]'>{ props.title }</p>
                 </div>
                 
                 <div className='[ flex align-items-center justify-content-start ]'>
-                    <Button onInteract={(e) => null} variant='window'>
+                    <Button onInteract={(e) => toggleElement(_props.id, true)} variant='window'>
                     </Button>
                 </div>
             </header>   

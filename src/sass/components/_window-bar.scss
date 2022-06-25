@@ -1,0 +1,9 @@
+.window-bar {
+    background-color: var(--clr-background-500);
+
+    top: 50%;
+    left: 96%;
+    transform: translate(-50%, -50%);
+
+    z-index: 9999999999999;
+}

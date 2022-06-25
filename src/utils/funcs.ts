@@ -48,13 +48,21 @@ export function getMoveWindowData(e: React.MouseEvent<any>): Props_MouseMoveOffs
     return { offsetX: 0, offsetY: 0 };
 }
 
-export function IsElementOutOfBounds(el: HTMLElement) {
-    const rect = el.getBoundingClientRect();
-    
-    return (
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    )
+export function toggleElement(id: string, centerOnBlock: boolean) {
+    const el = document.getElementById(id) as HTMLElement;
+
+    if(el) {
+        if(el.style.display === 'none') {
+            el.style.display = 'block';
+
+            // Centers the window
+            if(centerOnBlock) {
+                el.style.left = document.body.clientWidth / 2 - ( el.clientWidth / 2 ) + 'px';
+                el.style.top = document.body.clientHeight / 2 - ( el.clientHeight / 2 ) + 'px';
+            }
+        }
+            
+        else
+            el.style.display = 'none';
+    }
 }

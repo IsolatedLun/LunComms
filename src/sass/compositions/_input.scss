@@ -1,0 +1,11 @@
+@use '../abstracts/'as *;
+
+.input-container {
+    label {
+        margin-bottom: 0.25em;
+    }
+
+    .input {
+        @include create-input();
+    }
+}

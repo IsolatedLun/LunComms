@@ -8,7 +8,7 @@ $navbar-background: var(--clr-background-500);
 
 // Window
 $window-background-color: var(--clr-background-500);
-$window-outline-color: var(--clr-active-400);
+$window-outline-color: var(--clr-active-300);
 $window-min-width: 200px;
 $window-min-height: 100px;
 
@@ -35,3 +35,12 @@ $button-background-close: var(--clr-close-400);
 $button-background-close-hover: var(--clr-close-500);
 
 $buttonWindow-padding: 0.1em;
+
+// Input
+$input-padding-default: 0.25em 0.5em;
+$input-background-default: var(--clr-background-300);
+$input-color-default: var(--clr-text-400);
+$input-border-default: 2px solid var(--clr-input-border);
+$input-border-color-default-hov: var(--clr-input-border-color);
+$input-box-shadow-default-hov: 0 0 0px 3px var(--clr-input-shadow);
+$input-transition-default: background-color 95ms ease-in-out, color 95ms ease-in-out;

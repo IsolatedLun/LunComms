@@ -5,7 +5,21 @@
         margin-bottom: 0.25em;
     }
 
+    .container__image {
+        background-color: var(--clr-background-400);
+        width: 5rem;
+        aspect-ratio: 1;
+    }
+
     .input {
         @include create-input();
+    }
+
+    .input[data-variant='image'] {
+        @include create-input(
+            $background-on-hov: var(--clr-background-500),
+            $border-color-on-hov: var(-clr-background-500),
+            $box-shadow-on-hov: none
+        );
     }
 }

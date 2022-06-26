@@ -9,3 +9,4 @@ export interface Props_Input<T, E> extends Props_Element {
 }
 
 export interface Props_TextInput extends Props_Input<string, React.FormEvent<HTMLInputElement>> {  };
+export interface Props_ImageInput extends Props_Input<File | null, React.FormEvent<HTMLInputElement>> {  };

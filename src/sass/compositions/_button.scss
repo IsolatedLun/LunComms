@@ -12,7 +12,11 @@
         $color-on-hov: $button-cotrol-color-on-hov,
         $border-radius: 100vw,
         $padding: 0.45em 0.6em
-    )
+    );
+
+    &:is(:active) {
+        transform: scale(1.05);
+    }
 }
 
 .button[data-variant='close'] {

@@ -5,6 +5,9 @@ export const ICON_HEADPHONE = `\uf025`;
 export const ICON_PLUG = `\uf1e6`;
 export const ICON_USER = `\uf007`;
 
+export const EMPTY_IMG = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAw\
+    CAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=';
+
 export const WINDOW_1 = {
     id: 'connect',
     title: 'Connect to peer'

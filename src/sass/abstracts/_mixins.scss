@@ -50,6 +50,7 @@
 @mixin create-input(
     $padding: $input-padding-default,
     $background: $input-background-default,
+    $background-on-hov: $input-background-default,
     $box-shadow-on-hov: $input-box-shadow-default-hov,
     $border-color-on-hov: $input-border-color-default-hov,
     $border: $input-border-default,
@@ -65,5 +66,6 @@
     &:is(:hover, :focus) {
         border-color: $border-color-on-hov;
         box-shadow: $box-shadow-on-hov;
+        background-color: $background-on-hov;
     }
 }

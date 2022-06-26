@@ -60,7 +60,12 @@ const CommsControls = () => {
       </section>
     )
   else
-    return <>LOL</>
+    return (
+      <div className="[ pos-relative margin-block-2 ]">
+        <h2>No Mic Detected</h2>
+        <div className='[ smooth-bar ]'></div>
+      </div>
+    )
 }
 
 export default CommsControls

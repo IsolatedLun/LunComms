@@ -48,6 +48,12 @@ export function getMoveWindowData(e: React.MouseEvent<any>): Props_MouseMoveOffs
     return { offsetX: 0, offsetY: 0 };
 }
 
+/**
+ * @param id
+ * @param centerOnBlock
+ * @summary Toggles an element display (block || none) and if centerOnBlock it centers the element to the
+ * screen eg. a element that has a position: absolute
+*/
 export function toggleElement(id: string, centerOnBlock: boolean) {
     const el = document.getElementById(id) as HTMLElement;
 
@@ -64,5 +70,24 @@ export function toggleElement(id: string, centerOnBlock: boolean) {
             
         else
             el.style.display = 'none';
+    }
+}
+
+export function isImage(imgFile: File) {
+    return imgFile && imgFile['type'].split('/')[0] === 'image';
+}
+
+/**
+ * @param id
+ * @param imgFile
+*/
+export function previewImg(id: string, imgFile: File) {
+    if(isImage(imgFile)) {
+        const imgEl = document.getElementById(id) as HTMLImageElement;
+        const url = window.URL.createObjectURL(imgFile);
+
+        if(imgEl && url) {
+            imgEl.src = url;
+        }
     }
 }

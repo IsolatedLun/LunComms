@@ -5,7 +5,7 @@ import { Props_TextInput } from './types'
 const TextInput = (props: Props_TextInput) => {
     const _props = prepareProps(props, { 
         compostClass: 'input', 
-        utilClass: 'border-radius-cubed padding-inline-1' 
+        utilClass: 'border-radius-cubed padding-inline-1 width-100vw' 
     })
     const id = useId();
 

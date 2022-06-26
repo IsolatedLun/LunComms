@@ -24,7 +24,10 @@ $button-padding-default: 0.25em 0.5em;
 $button-background-default: var(--clr-active-400);
 $button-color-default: var(--clr-text-400);
 $button-border-radius-default: $border-radius-cubed;
-$button-transition-default: background-color 95ms ease-in-out, color 95ms ease-in-out;
+$button-transition-default: 
+    background-color 95ms ease-in-out, 
+    color 95ms ease-in-out, 
+    transform 95ms ease-in-out;
 
 $button-control-background: var(--clr-text-muted-hov);
 $button-control-color: var(--clr-text-muted);
@@ -44,3 +47,8 @@ $input-border-default: 2px solid var(--clr-input-border);
 $input-border-color-default-hov: var(--clr-input-border-color);
 $input-box-shadow-default-hov: 0 0 0px 3px var(--clr-input-shadow);
 $input-transition-default: background-color 95ms ease-in-out, color 95ms ease-in-out;
+
+// Smooth Bar
+$smoothBar-width: 100%;
+$smoothBar-height: 2px;
+$smoothBar-duration: 1.25s;

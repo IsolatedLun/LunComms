@@ -8,7 +8,9 @@ const Button = (props: Props_Button) => {
     const [isActive, setActive] = useState(false)
 
     return (
-        <button 
+        <button
+            id={_props.id}
+        
             data-variant={_props.variant}
             data-secondary-variant={_props.secondaryVariant}
             data-active={isActive && props.useActive}

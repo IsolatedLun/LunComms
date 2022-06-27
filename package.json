@@ -9,8 +9,11 @@
     "postcss-run": "postcss ./css/index.css -o ./css/__index.css --watch"
   },
   "dependencies": {
+    "@types/firebase": "^3.2.1",
+    "firebase": "^9.8.4",
     "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.0.0",
+    "reactfire": "^4.2.1"
   },
   "devDependencies": {
     "@types/react": "^18.0.0",

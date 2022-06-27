@@ -23,6 +23,7 @@ const TextInput = (props: Props_TextInput) => {
                 data-variant={_props.variant}
                 data-secondary-variant={_props.secondaryVariant}
                 value={_props.value}
+                readOnly={props.readOnly ? true : false}
 
                 onInput={(e) => _props.onInput ? _props.onInput(e) : null}
 

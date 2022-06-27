@@ -14,7 +14,7 @@ const IconButton = (props: Props_IconButton) => {
             data-active={isActive && props.useActive}
 
             onClick={(e) => {
-                _props.onInteract && _props.onInteract(e, !isActive);
+                _props.onInteract && _props.onInteract(e, isActive);
                 setActive(!isActive);
             }}
 

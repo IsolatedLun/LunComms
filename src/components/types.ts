@@ -1,3 +1,10 @@
+import React from "react";
+import firebase from "firebase/compat/app";
+
+export interface Props_GlobalState {
+    fs: firebase.firestore.Firestore
+} 
+
 export interface Props_CubeCSS {
     blockClass?: string;
     compostClass?: string;
@@ -21,6 +28,12 @@ export interface Props_Element extends Props_Children, Props_CubeCSS, Props_Vari
     id?: string;
 };
 
-export interface Props_Interactibe<E> extends Props_Element {
-    onInteract?: (e: E, isActive: boolean) => void;
+export interface EventFn<E, args> {
+    (e: E, ...args: any[]): void;
 }
+
+export interface Props_Interactibe<E, args> extends Props_Element {
+    onInteract?: EventFn<E, args>;
+}
+
+export type Setter<Type> = React.Dispatch<React.SetStateAction<Type>>;

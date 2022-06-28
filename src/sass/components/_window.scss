@@ -1,7 +1,7 @@
 @use '../abstracts/' as *;
 
 .window {
-
+    display: none;
 
     background-color: $window-background-color;
     border: 1px solid $window-outline-color;

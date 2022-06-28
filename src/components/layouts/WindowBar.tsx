@@ -13,7 +13,7 @@ const WindowBar = () => {
                 ariaLabel={`Open window ${WINDOW_1.title}`} 
                 onInteract={() => toggleElement(WINDOW_1.id, true)}
                 variant='control'>
-                { ICON_PLUG }
+                { 'J' }
             </IconButton>
 
             <IconButton 

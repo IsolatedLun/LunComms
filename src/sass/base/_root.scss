@@ -1,5 +1,17 @@
 @use '../abstracts/' as *;
 
+.dev-vids {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2em;
+
+    video {
+        width: 500px;
+        aspect-ratio: 16 / 9;
+        background-color: black;
+    }
+}
+
 :root {
     @each $name, $color in $active-theme {
         @each $clr-key, $clr-val in $color {

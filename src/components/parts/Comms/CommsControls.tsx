@@ -1,31 +1,30 @@
-import { ICON_HEADPHONE, ICON_MICROPHONE, ICON_PHONE, ICON_WIFI, LOCAL_ID, REMOTE_ID } from '../../consts'
-import IconButton from '../modules/Buttons/IconButton'
-import { Props_CommsControls } from './types'
+import { useEffect } from 'react'
+import { ICON_HEADPHONE, ICON_MICROPHONE, ICON_PHONE, REMOTE_VIDEO_ID } from '../../../consts'
+import { changeVideoAudio } from '../../../utils/funcs'
+import IconButton from '../../modules/Buttons/IconButton'
 
-const CommsControls = (props: Props_CommsControls) => {
+const CommsControls = () => {
     return (
       <section className='[ comms-controls ] [ flex padding-1 padding-inline-2 gap-1 border-radius-100vw ]'>
           <IconButton 
             ariaLabel='Microphone' 
             variant='control'
             useActive
-            onInteract={async(e, isActive) => null}
+            isActive
+            onInteract={(e, isActive) => null}
             >
               { ICON_MICROPHONE }
           </IconButton>
-          <IconButton ariaLabel='Headphone' variant='control' useActive>
+          <IconButton 
+            ariaLabel='Headphone' 
+            variant='control' 
+            useActive 
+            isActive
+
+            onInteract={(e, isActive) => changeVideoAudio(REMOTE_VIDEO_ID, isActive ? 1 : 0)}
+            >
               { ICON_HEADPHONE }
           </IconButton>
-          <IconButton 
-            utilClass='fs-400 ' 
-            ariaLabel='Open connection'
-            variant='control'
-            useActive 
-            onInteract={() => props.startStreamFn(LOCAL_ID, REMOTE_ID)}
-            >
-              { ICON_WIFI }
-          </IconButton>
-
           <IconButton 
             utilClass='fs-400 margin-inline-start-2' 
             ariaLabel='Close call' 

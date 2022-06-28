@@ -5,7 +5,7 @@ import { Props_IconButton } from './types';
 const IconButton = (props: Props_IconButton) => {
     const _props = prepareProps(props, { 'compostClass': 'icon button', utilClass: 'fs-600' });
 
-    const [isActive, setActive] = useState(false)
+    const [isActive, setActive] = useState(_props.isActive ? true : false)
 
     return (
         <button 

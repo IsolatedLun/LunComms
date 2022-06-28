@@ -38,5 +38,5 @@ export const WINDOW_3 = {
 };
 
 // IDS
-export const LOCAL_ID = 'local-stream';
-export const REMOTE_ID = 'remote-stream';
+export const LOCAL_VIDEO_ID = 'local-stream';
+export const REMOTE_VIDEO_ID = 'remote-stream';

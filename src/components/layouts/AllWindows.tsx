@@ -1,12 +1,10 @@
 import { WINDOW_1, WINDOW_2, WINDOW_3 } from '../../consts'
-import { createSignal, offerSignal } from '../../utils/funcs'
 import Button from '../modules/Buttons/Button'
 import ImageInput from '../modules/Inputs/ImageInput'
 import TextInput from '../modules/Inputs/TextInput'
 import Window from '../modules/Window/Window'
-import { Props_AllWindows } from './types'
 
-const AllWindows = (props: Props_AllWindows) => {
+const AllWindows = () => {
   return (
     <>
         <Window 
@@ -17,8 +15,8 @@ const AllWindows = (props: Props_AllWindows) => {
             compostClass='grid place-items-center width-100 margin-inline-auto'
             utilClass='gap-1'
             >
-            <TextInput value={props.callInput} onInput={(e) => props.callInputSetter(e.currentTarget.value)} />
-            <Button onInteract={() => createSignal(props.PC, props.fs, props.callInput)}>
+            <TextInput value='' />
+            <Button>
               Connect
             </Button>
           </Window>
@@ -44,9 +42,8 @@ const AllWindows = (props: Props_AllWindows) => {
             compostClass='flex flex-direction-column width-100 margin-inline-auto'
             utilClass='gap-1'
             >
-            <TextInput value={props.callCode} readOnly />
-            <Button 
-              onInteract={() => offerSignal(props.PC, props.fs, props.callCodeSetter)}>
+            <TextInput value='' readOnly />
+            <Button>
                 Generate call key
             </Button>
           </Window>

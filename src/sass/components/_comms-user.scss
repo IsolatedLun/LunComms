@@ -2,12 +2,11 @@
 
 .comms-user {
     background-color: $commsUser-background;
-    padding: $commsUser-padding-resp;
 
-    .user__profile {
-        width: $userProfile-width-resp;
+    .user__video {
+        width: $userVideo-width-resp;
 
         background-color: black;
-        aspect-ratio: 1;
+        aspect-ratio: 16 / 9;
     }
 }

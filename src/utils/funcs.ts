@@ -59,7 +59,7 @@ export function toggleElement(id: string, centerOnBlock: boolean) {
     const el = document.getElementById(id) as HTMLElement;
 
     if(el) {
-        if(el.style.display === 'none') {
+        if(!el.style.display || el.style.display === 'none') {
             el.style.display = 'block';
 
             // Centers the window
@@ -93,90 +93,8 @@ export function previewImg(id: string, imgFile: File) {
     }
 }
 
-export async function offerSignal
-(
-    PC: RTCPeerConnection, 
-    fs: firebase.firestore.Firestore,
-    callInputSetter: Setter<string>
-) 
-{
-    const callDoc = (fs.collection('calls').doc());
-    const offerCandidates = (callDoc.collection('offerCandidates'));
-    const answerCandidates = (callDoc.collection('answerCandidates'));
+export function changeVideoAudio(videoId: string, vol: number) {
+    const videoEl = document.getElementById(videoId) as HTMLVideoElement;
 
-    // Gets candidates for the caller and saves to the db
-    PC.onicecandidate = (e) => {
-      e.candidate && offerCandidates.add(e.candidate.toJSON());
-    }
-
-    callInputSetter(callDoc.id) // Create's a unique id for connecting to calls
-    const offerDescription = await PC.createOffer();
-    await PC.setLocalDescription(offerDescription);
-
-    const offer = {
-      sdp: offerDescription.sdp,
-      type: offerDescription.type
-    }
-
-    await callDoc.set({ offer });
-
-    callDoc.onSnapshot((snapshot) => {
-      const data = snapshot.data();
-      if(!PC.currentRemoteDescription && data?.answer) {
-        const answerDescription = new RTCSessionDescription(data.answer);
-        PC.setRemoteDescription(answerDescription)
-      }
-    })
-
-    // When call entered, add candidate to peer connection
-    answerCandidates.onSnapshot((snap) => {
-      snap.docChanges().forEach(change => {
-        if(change.type === 'added') {
-          const candidate = new RTCIceCandidate(change.doc.data());
-          
-          PC.addIceCandidate(candidate)
-        }
-      })
-    })
-}
-
-export async function createSignal
-(
-    PC: RTCPeerConnection, 
-    fs: firebase.firestore.Firestore,
-    callInput: string
-) 
-{
-    const callDoc = fs.collection('calls').doc(callInput);
-    const answerCandidates = callDoc.collection('answerCandidates');
-    const offerCandidates = callDoc.collection('offerCandidates');
-
-    PC.onicecandidate = e => {
-    e.candidate && answerCandidates.add(e.candidate.toJSON());
-    }
-
-    const callData = (await callDoc.get()).data()!;
-
-    const offerDesc = callData.offer;
-    await PC.setRemoteDescription(new RTCSessionDescription(offerDesc));
-
-    const answerDesc = await PC.createAnswer();
-    await PC.setLocalDescription(answerDesc);
-
-    const answer = {
-    sdp: answerDesc.sdp,
-    type: answerDesc.type
-    }
-
-    await callDoc.update({ answer });
-
-    offerCandidates.onSnapshot((snap) => {
-    snap.docChanges().forEach(change => {
-        if(change.type === 'added') {
-            const candidate = new RTCIceCandidate(change.doc.data());
-            
-            PC.addIceCandidate(candidate);
-        }
-        })
-    })
+    videoEl.volume = vol;
 }

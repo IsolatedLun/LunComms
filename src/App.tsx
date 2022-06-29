@@ -15,8 +15,12 @@ function App(props: Props_GlobalState) {
   const [callCode, setCallCode] = useState('');
   const [codeInput, setCodeInput] = useState('');
 
+  const [client, setClient] = useState<any>();
+  const [channel, setChannel] = useState<any>();
+
   useEffect(() => {
-    RTC_Init(PC, LOCAL_VIDEO_ID).then(stream => setLocalStream(stream));
+    RTC_Init(PC, LOCAL_VIDEO_ID, REMOTE_VIDEO_ID, setClient)
+      .then(stream => setLocalStream(stream));
   }, [])
 
   return (

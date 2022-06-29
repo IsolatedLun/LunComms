@@ -98,3 +98,7 @@ export function changeVideoAudio(videoId: string, vol: number) {
 
     videoEl.volume = vol;
 }
+
+export function createUUID(): string {
+    return String(Math.floor(Math.random() * 100))
+}

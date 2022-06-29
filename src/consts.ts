@@ -40,3 +40,6 @@ export const WINDOW_3 = {
 // IDS
 export const LOCAL_VIDEO_ID = 'local-stream';
 export const REMOTE_VIDEO_ID = 'remote-stream';
+
+export const APP_ID = '7ddfc8713afc404bbbf69dedb977a519';
+export const TOKEN = null;
